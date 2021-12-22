@@ -22,6 +22,15 @@ export class AppComponent implements OnInit{
         'gender':new FormControl('male'),
         'hobbies':new FormArray([])
       });
+
+
+     /* this.signupForm.valueChanges.subscribe(
+        (value)=>{console.log(value);});  //fired whenever we change something about the form, so whenever a user types in something
+        */
+
+        this.signupForm.valueChanges.subscribe(
+          (value)=>{console.log(value);});   //here, status is displayed instead of value everytime a user changes something in the input
+
   }
 
   onSubmit(){
