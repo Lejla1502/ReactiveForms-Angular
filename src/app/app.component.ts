@@ -28,9 +28,9 @@ export class AppComponent implements OnInit{
         (value)=>{console.log(value);});  //fired whenever we change something about the form, so whenever a user types in something
         */
 
-        this.signupForm.valueChanges.subscribe(
-          (value)=>{console.log(value);});   //here, status is displayed instead of value everytime a user changes something in the input
-
+     /*   this.signupForm.statusChanges.subscribe(
+          (status)=>{console.log(status);});   //here, status is displayed instead of value everytime a user changes something in the input
+*/
   }
 
   onSubmit(){
@@ -56,7 +56,7 @@ export class AppComponent implements OnInit{
   forbiddenEmails(control:FormControl):Promise<any> | Observable<any>{
     const promise=new Promise<any>((resolve,reject)=>{
       setTimeout(() => {
-        if(control.value=="lejlasp@hotmail.com")
+        if(control.value==="lejlasp@hotmail.com")
           resolve({'emailIsForbidden':true});
         else
           resolve(null);
